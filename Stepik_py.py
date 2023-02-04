@@ -3379,9 +3379,30 @@ draw_triangle()  # вызов функции
 #Примечание. Гарантируется, что основание треугольника – нечетное число.
 
 
+#--194 ФИО
+#Напишите функцию print_fio(name, surname, patronymic), которая принимает три параметра:
+#
+#name – имя человека;
+#surname – фамилия человека;
+#patronymic – отчество человека;
+#а затем выводит на печать ФИО человека.
+#
+#Примечание. Предусмотрите тот факт, что все три буквы в ФИО должны иметь верхний регистр.
+
+# объявление функции
+def print_fio(name, surname, patronymic):
+    s = surname[0].upper()+name[0].upper()+patronymic[0].upper()
+    print(s)
+
+# считываем данные
+name, surname, patronymic = input(), input(), input()
+
+# вызываем функцию
+print_fio(name, surname, patronymic)
 
 
 
+#--195
 
 
 
