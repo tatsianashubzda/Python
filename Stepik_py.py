@@ -3504,6 +3504,28 @@ print(*[i[1:] + i[0] + 'ки' for i in l])
 
 
 #--201
+#Сумма цифр
+#Напишите функцию print_digit_sum(), которая принимает одно целое число num и выводит на печать сумму его цифр.
+
+# объявление функции
+def print_digit_sum(num):
+    num_str = str(num)
+    digit_sum = 0
+    for i in num_str:
+        digit_sum+=int(i)
+    print(digit_sum)
+        
+
+# считываем данные
+n = int(input())
+
+# вызываем функцию
+print_digit_sum(n)
+
+
+
+#--202
+
 
 
 
