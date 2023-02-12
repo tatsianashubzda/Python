@@ -3583,7 +3583,37 @@ print(convert_to_miles(num))
 #
 #Примечание 2. Считайте, что год является невисокосным.
 
+# объявление функции
+def get_days(month):
+    if month in [1, 3, 5, 7, 8, 10, 12]:
+        return 31
+    elif month in [4, 6, 9, 11]:
+        return 30
+    else:
+        return 28
+
+# считываем данные
+num = int(input())
+
+# вызываем функцию
+print(get_days(num))
 
 
 
 
+#--208 Напишите функцию get_factors(num), принимающую в качестве аргумента натуральное число и возвращающую список всех делителей данного числа.
+
+# объявление функции
+def get_factors(num):
+    delit = []
+    for i in range(1, num+1):
+        if num%i==0:
+            delit.append(i)
+    return(delit)
+# считываем данные
+n = int(input())
+
+# вызываем функцию
+print(get_factors(n))
+
+#--209
