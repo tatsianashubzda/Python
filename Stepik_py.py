@@ -3617,3 +3617,27 @@ n = int(input())
 print(get_factors(n))
 
 #--209
+#Напишите функцию number_of_factors(num), принимающую в качестве аргумента число и возвращающую количество делителей данного числа.
+#
+#Примечание 1. Используйте уже реализованную функцию get_factors(num) из предыдущей задачи.
+#
+#Примечание 2. Следующий программный код:
+
+
+# объявление функции
+def get_factors(num):
+    delit = []
+    for i in range(1, num+1):
+        if num%i==0:
+            delit.append(i)
+    return(delit)
+
+def number_of_factors(num):
+    s = len(get_factors(num))
+    return(s)
+
+# считываем данные
+n = int(input())
+
+# вызываем функцию
+print(number_of_factors(n))
