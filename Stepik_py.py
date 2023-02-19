@@ -3751,14 +3751,10 @@ print(is_valid_triangle(a, b, c))
 def is_prime(num):
     if num == 1:
         return False
-    count = 0
     for i in range(2, num):
-        if num%i == 0:
-            count+=1
-    if count >0:
-        return False
-    else:
-        return True
+        if num % i == 0:
+            return False
+    return True
     
 # считываем данные
 n = int(input())
@@ -3769,4 +3765,119 @@ print(is_prime(n))
 
 
 #--125
+#Next Prime 🌶️🌶️
+#Напишите функцию get_next_prime(num), которая принимает в качестве аргумента натуральное число num и возвращает первое простое число большее числа num.
+#
+#Примечание 1. Используйте функцию is_prime() из предыдущей задачи.
+#
+# Примечание 2. Следующий программный код:
+#
+#print(get_next_prime(6))
+#print(get_next_prime(7))
+#print(get_next_prime(14))
+#должен выводить:
+#
+#7
+#11
+#17
 
+# объявление функции
+
+def is_prime(num):
+    if num == 1:
+        return False
+    for i in range(2, num):
+        if num % i == 0:
+            return False
+    return True
+
+def get_next_prime(num):
+    i=num +1
+    while is_prime(i) == False:
+        i+=1
+    return i
+        
+
+# считываем данные
+n = int(input())
+
+# вызываем функцию
+print(get_next_prime(n))
+
+
+
+#--126
+#Good password 🌶️
+#Напишите функцию is_password_good(password), которая принимает в качестве аргумента строковое значение пароля password и возвращает значение True если пароль является надежным и False в противном случае.
+#
+#Пароль является надежным если:
+#его длина не менее 8 символов; 
+#он содержит как минимум одну заглавную букву (верхний регистр); 
+#он содержит как минимум одну строчную букву (нижний регистр);
+#он содержит хотя бы одну цифру.
+# Примечание. Следующий программный код:
+#
+#print(is_password_good('aabbCC11OP'))
+#print(is_password_good('abC1pu'))
+#должен выводить:
+#
+#True
+#False
+
+
+# объявление функции
+def is_password_good(password):
+    if len(password) < 8:
+        return False
+    has_upper = False
+    has_lower = False
+    has_digit = False
+    for char in password:
+        if char.isupper():
+            has_upper = True
+        elif char.islower():
+            has_lower = True
+        elif char.isdigit():
+            has_digit = True
+        if has_upper and has_lower and has_digit:
+            return True
+    return False
+
+# считываем данные
+txt = input()
+
+# вызываем функцию
+print(is_password_good(txt))
+
+
+
+#--127
+#Ровно в одном
+#Напишите функцию is_one_away(word1, word2), которая принимает в качестве аргументов два слова word1 и word2 и возвращает значение True если слова имеют одинаковую длину и отличаются ровно в 1 символе и False в противном случае.
+
+
+# объявление функции
+def is_one_away(word1, word2):
+    if len(word1) == len(word2):
+        diff_count = 0
+        for i in range(len(word1)):
+            if word1[i] != word2[i]:
+                diff_count += 1
+        if diff_count == 1:
+            return True
+        else:
+            return False
+    else:
+        return False
+    #return diff_count == 1
+# считываем данные
+txt1 = input()
+txt2 = input()
+
+# вызываем функцию
+print(is_one_away(txt1, txt2))
+
+
+
+#--128
+#
