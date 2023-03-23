@@ -253,3 +253,25 @@ for i in range(n+1):
     s.append(row)
 print(s[n] if n!=0 else [1])
 
+
+
+# 13
+# На вход программе подается натуральное число nn. Напишите программу, которая выводит первые nn строк треугольника Паскаля.
+
+n = int(input())
+s=[]
+for i in range(0,n):
+    row=[1]*(i+1)
+    for j in range(i+1):
+        if j!=0 and j!=i:
+            row[j]=s[i-1][j-1]+s[i-1][j]
+    s.append(row)
+
+for k in s:
+    print(*k)
+
+
+
+# 14
+# 
+
