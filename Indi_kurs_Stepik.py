@@ -306,6 +306,36 @@ def print_to(n: int) -> None:
 
 # 17
 #
+#Дано натуральное число N и последовательность из N элементов. Требуется вывести эту последовательность в обратном порядке.
+
+n = int(input())
+li = list(map(int, input().split()))
+
+def posl(n):
+    if n>0:
+        posl(n-1)
+        print(li[-n], end = ' ')
+posl(n)
+
+
+
+#18
+#
+#Описать рекурсивную функцию double_fact, которая принимает на вход целое число и вычисляет значение двойного факториала по формуле:
+#f(n) = n/(n-2)*(n-4)*(n-6)*...
+def double_fact(n):
+    if n==1:
+        return 1
+    if n==2:
+        return 2
+    if n>2:
+        fact = n*double_fact(n-2)
+    return fact
+
+
+
+#19
+#
 
 
 
