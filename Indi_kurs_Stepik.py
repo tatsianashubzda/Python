@@ -411,8 +411,48 @@ def flatten_dict(d: dict, key = '') -> dict:
 
 
 #24
+# Напишите программу, которая отсортирует список subject_marks по возрастанию оценок. Затем распечатайте предметы и оценки, каждую пару на новой строке через пробел
+
+subject_marks = [('English', 88), ('Science', 90), ('Maths', 97), ('Physics', 93),('History', 82)]
+
+sub_sort = sorted(subject_marks, key=lambda x: int(x[1]))  
+for i in sub_sort:                                         
+    print(*i)
 
 
 
+#25
+#Напишите программу, которая отсортирует список subject_marks по убыванию оценок.
+#Затем распечатайте предметы и оценки, каждую пару на новой строке через пробел
+
+Maths 97
+Physics 93
+Programming 91
+Science 90
+English 88
+History 82
+French 78
+Chemistry 76
+Art 58
+
+
+
+#26
+#Напишите программу, которая отсортирует список subject_marks по убыванию оценок. Предметы, имеющие одинаковые оценки, должны быть отсортированы в алфавитном порядке
+#Затем распечатайте предметы и оценки, каждую пару на новой строке через пробел
+
+subject_marks = [('English', 88), ('Science', 90), ('Maths', 88),
+                 ('Physics', 93), ('History', 78), ('French', 78),
+                 ('Art', 78), ('Chemistry', 88), ('Programming', 91)]
+
+subject_marks1 = sorted(subject_marks)
+sub_sort = sorted(subject_marks1, key=lambda x: -int(x[1]))  
+for i in sub_sort:                                         
+    print(f'{i[0]} {i[1]}')
+
+
+
+#27
+#
 
 
