@@ -493,5 +493,74 @@ for i in sp:
     print(f'{i[0]}')
 
 
+# 29
+# Напишите функцию file_read, которая принимает имя файла, и печатает его содержимое.
+# Учитывайте, что содержимое файла может быть как на русском языке, так и на английском
+
+def file_read(file_name):
+    f = open(file_name, mode = 'r', encoding = 'utf-8')
+    
+    print(f.read())
+    f.close()
+
+
+
+#30
+# Напишите функцию file_n_lines, которая печатает первые n-строка файла. Функция file_n_lines принимает на вход название файла и количество строк для прочтения.
+# Не забывайте избавляться от символа переноса строки
+
+def file_n_lines(file_name: str, n: int) -> None:
+    file = open(file_name, mode = 'r', encoding = 'utf-8')
+    
+    for i in range(n):
+        print(file.readline().strip())
+        
+    file.close()
+
+
+
+#31
+# Напишите функцию create_file_with_numbers, которая принимает на вход одно целое положительное число - n.
+# Функция должна создать файл с название "range_<number>.txt" и наполнить его целыми числами от 1 до n включительно, причем каждое число записывается  в отдельной строке
+# Пример: функция create_file_with_numbers(5) должна создать файл range_5.txt с содержимым
+
+def create_file_with_numbers(n):
+    file = open(f'range_{n}.txt', mode ='a')
+    for i in range(n):
+        file.write(str(i+1) + '\n')
+    file.close()
+
+
+
+#32
+# Напишите функцию longest_word_in_file, которая принимает имя файла и внутри его содержимого находит самое длинное слово и возвращает его в качестве ответа. В случае,  если есть несколько слов с максимальной длиной, нужно вернуть слово, которое встречается последнее в тексте.
+# При этом слова в тексте отделяются друг от друга пробелами, любые другие знаки пунктуации необходимо исключить.  И также учитывайте, что слова в тестах будут как на русском языке, так и на английском.
+# Если бы содержимое файла было таким:
+# He was running, but it was like running through deep water. There were trees all around him, 
+# trees which tried to stop him. They reached out with their branches. 
+# And it was behind him. It was coming nearer. 
+# 
+# то ответом было бы слово branches
+# Все возможные знаки пунктуации можно получить из модуля string
+# 
+# from string import punctuation
+
+
+def longest_word_in_file(file_name):
+    file = open(file_name, mode = 'r', encoding = 'utf-8')
+    
+    punct = '.,:!?"'          # строка со знаками пунктуации
+    max_w = ''                # мах слово
+    
+    for row in file:
+        for i in punct:        # если есть знаки пунктуации - удаляем
+            if i in row:
+                row = row.replace(i,'')
+        words=row.split()       # делим строку на слова
+        
+        for i in words:         #сравниваем с мах
+            if len(i)>=len(max_w):
+                max_w = i
+    return max_w
 
 
